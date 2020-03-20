@@ -5,12 +5,21 @@ nodetested1 = new MerkleNode(nodetest1,nodetested);
 treetest = new MerkleTree(nodetested1);
 treetest1 = new MerkleTree(nodetested,treetest);
 
-var trees = [];
-
-
+blockchain = new Blockchain();
 
 function testit(){
     alert(treetest.getRoundValue());
+}
+
+function makeTransaction(){
+    from = document.getElementById("from").value;
+    to = document.getElementById("to").value;
+    amount = document.getElementById("amount").value;
+    blockchain.makeTransaction(from,to,amount);
+}
+
+function mine(){
+    blockchain.mine();
 }
 
 class MerkleProgram {
