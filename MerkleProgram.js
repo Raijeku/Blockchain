@@ -5,6 +5,7 @@ nodetested1 = new MerkleNode(nodetest1,nodetested);
 treetest = new MerkleTree(nodetested1);
 treetest1 = new MerkleTree(nodetested,treetest);
 
+transaction = new Transaction("me","you",5);
 blockchain = new Blockchain();
 
 function testit(){
@@ -20,6 +21,11 @@ function makeTransaction(){
 
 function mine(){
     blockchain.mine();
+}
+
+function showTree(){
+    console.log("Showing tree");
+    blockchain.showTransactions();
 }
 
 class MerkleProgram {

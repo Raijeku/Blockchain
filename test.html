@@ -2,15 +2,24 @@
     <head>
         <title>test</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+        
+        <script src="Transaction.js"></script>
+        <script src="MerkleTree.js"></script>
+        <script src="MerkleNode.js"></script>
+        <script src="SHA1.js"></script>
+        <script src="BlockBody.js"></script>
+        <script src="BlockHeader.js"></script>
+        <script src="Block.js"></script>
+        <script src="Blockchain.js"></script>
+        <script src="MerkleProgram.js"></script>
     </head>
     <body>
-        <button value="click me" onclick="testit()"></button>
         <input type="text" name="from" id="from" placeholder="From"></input>
         <input type="text" name="to" id="to" placeholder="To"></input>
         <input type="text" name="amount" id="amount" placeholder="Amount"></input>
         <input type="submit" value="Submit" onclick="makeTransaction()"></input>
         <input type="submit" value="Mine" onclick="mine()"></input>
+        <input type="submit" value="Show Transactions" onclick="showTree()"></button>
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -18,13 +27,3 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
-
-<script src="MerkleTree.js"></script>
-<script src="MerkleNode.js"></script>
-<script src="SHA1.js"></script>
-<script src="MerkleProgram.js"></script>
-<script src="Transaction.js"></script>
-<script src="BlockBody.js"></script>
-<script src="BlockHeader.js"></script>
-<script src="Block.js"></script>
-<script src="Blockchain.js"></script>

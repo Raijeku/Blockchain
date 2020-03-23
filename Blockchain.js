@@ -1,22 +1,35 @@
-class Blockchain{
+class Blockchain {
     
-    constructor(nextBlock){
+    constructor(block){
         
-        if(nextBlock===undefined){
-            this.nextBlock = new Block();
+        if(block===undefined){
+            this.block = new Block();
         } else {
-            this.nextBlock = nextBlock;
+            this.block = block;
         }
     }
 
     mine(){
-        if(this.nextBlock.getBlockHeader().incrementNonce() == true){
-            alert("found");
+        var found = false; 
+        while(found != true){
+            var nonceInfo = this.block.getBlockHeader().incrementNonce();
+            found = nonceInfo[0]
         }
+        this.block.storeTransactions();
+        alert("Found nonce "+nonceInfo[1].toString()+" with hash "+nonceInfo[2].toString());
+        this.addBlock();
     }
 
     makeTransaction(from,to,amount){
-        this.nextBlock.addTransaction(new Transaction(from,to,amount));
+        this.block.getBlockBody().addTransaction(new Transaction(from,to,amount));
+    }
+
+    addBlock(){
+        this.block = new Block(this.block.getBlockHeader().getHash());
+    }
+
+    showTransactions(){
+        this.block.getBlockBody().getTransactions().traverse();
     }
 
 }

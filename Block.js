@@ -10,9 +10,9 @@ class Block{
         }
     }
 
-    addTransaction(transaction){
+    /*addTransaction(transaction){
         this.blockBody.addTransaction();
-    }
+    }*/
 
     getBlockHeader(){
         return this.blockHeader;
@@ -20,6 +20,12 @@ class Block{
 
     getBlockBody(){
         return this.blockBody;
+    }
+
+    storeTransactions(){
+        var transactions = this.blockBody.getTransactions();
+        this.blockHeader.setMerkleRoot(transactions.getRoundValue());
+
     }
 
 }
